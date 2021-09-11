@@ -1,0 +1,814 @@
+Timing Analyzer report for top
+Thu Oct  8 16:06:59 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'refclk'
+ 12. Setup: 'sigclk'
+ 13. Setup: 'sck'
+ 14. Hold: 'sigclk'
+ 15. Hold: 'sck'
+ 16. Hold: 'refclk'
+ 17. Setup Transfers
+ 18. Hold Transfers
+ 19. Report TCCS
+ 20. Report RSKM
+ 21. Unconstrained Paths Summary
+ 22. Clock Status Summary
+ 23. Unconstrained Input Ports
+ 24. Unconstrained Output Ports
+ 25. Unconstrained Input Ports
+ 26. Unconstrained Output Ports
+ 27. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; top                                                 ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM240T100C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; refclk     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { refclk } ;
+; sck        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { sck }    ;
+; sigclk     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { sigclk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fmax Summary                                                                                              ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 67.45 MHz  ; 67.45 MHz       ; refclk     ;                                                               ;
+; 201.09 MHz ; 201.09 MHz      ; sigclk     ;                                                               ;
+; 350.63 MHz ; 304.04 MHz      ; sck        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------+
+; Setup Summary                    ;
++--------+---------+---------------+
+; Clock  ; Slack   ; End Point TNS ;
++--------+---------+---------------+
+; refclk ; -13.826 ; -433.769      ;
+; sigclk ; -3.973  ; -102.353      ;
+; sck    ; -1.852  ; -10.036       ;
++--------+---------+---------------+
+
+
++--------------------------------+
+; Hold Summary                   ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; sigclk ; 1.405 ; 0.000         ;
+; sck    ; 1.477 ; 0.000         ;
+; refclk ; 1.663 ; 0.000         ;
++--------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++---------------------------------+
+; Minimum Pulse Width Summary     ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; refclk ; -2.289 ; -2.289        ;
+; sck    ; -2.289 ; -2.289        ;
+; sigclk ; -2.289 ; -2.289        ;
++--------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'refclk'                                                                                                           ;
++---------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -13.826 ; \ledblink:count[22] ; \ledblink:count[25] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.493     ;
+; -13.826 ; \ledblink:count[22] ; \ledblink:count[26] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.493     ;
+; -13.826 ; \ledblink:count[22] ; \ledblink:count[27] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.493     ;
+; -13.826 ; \ledblink:count[22] ; \ledblink:count[28] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.493     ;
+; -13.826 ; \ledblink:count[22] ; \ledblink:count[29] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.493     ;
+; -13.826 ; \ledblink:count[22] ; \ledblink:count[30] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.493     ;
+; -13.816 ; \ledblink:count[22] ; \ledblink:count[24] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.483     ;
+; -13.816 ; \ledblink:count[22] ; \ledblink:count[23] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.483     ;
+; -13.816 ; \ledblink:count[22] ; \ledblink:count[22] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.483     ;
+; -13.816 ; \ledblink:count[22] ; \ledblink:count[20] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.483     ;
+; -13.816 ; \ledblink:count[22] ; \ledblink:count[21] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.483     ;
+; -13.816 ; \ledblink:count[22] ; \ledblink:count[19] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.483     ;
+; -13.816 ; \ledblink:count[22] ; \ledblink:count[18] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.483     ;
+; -13.816 ; \ledblink:count[22] ; \ledblink:count[16] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.483     ;
+; -13.816 ; \ledblink:count[22] ; \ledblink:count[15] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.483     ;
+; -13.816 ; \ledblink:count[22] ; \ledblink:count[17] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.483     ;
+; -13.513 ; \ledblink:count[11] ; \ledblink:count[25] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.180     ;
+; -13.513 ; \ledblink:count[11] ; \ledblink:count[26] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.180     ;
+; -13.513 ; \ledblink:count[11] ; \ledblink:count[27] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.180     ;
+; -13.513 ; \ledblink:count[11] ; \ledblink:count[28] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.180     ;
+; -13.513 ; \ledblink:count[11] ; \ledblink:count[29] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.180     ;
+; -13.513 ; \ledblink:count[11] ; \ledblink:count[30] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.180     ;
+; -13.503 ; \ledblink:count[11] ; \ledblink:count[24] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.170     ;
+; -13.503 ; \ledblink:count[11] ; \ledblink:count[23] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.170     ;
+; -13.503 ; \ledblink:count[11] ; \ledblink:count[22] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.170     ;
+; -13.503 ; \ledblink:count[11] ; \ledblink:count[20] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.170     ;
+; -13.503 ; \ledblink:count[11] ; \ledblink:count[21] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.170     ;
+; -13.503 ; \ledblink:count[11] ; \ledblink:count[19] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.170     ;
+; -13.503 ; \ledblink:count[11] ; \ledblink:count[18] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.170     ;
+; -13.503 ; \ledblink:count[11] ; \ledblink:count[16] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.170     ;
+; -13.503 ; \ledblink:count[11] ; \ledblink:count[15] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.170     ;
+; -13.503 ; \ledblink:count[11] ; \ledblink:count[17] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.170     ;
+; -13.377 ; \ledblink:count[9]  ; \ledblink:count[25] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.044     ;
+; -13.377 ; \ledblink:count[9]  ; \ledblink:count[26] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.044     ;
+; -13.377 ; \ledblink:count[9]  ; \ledblink:count[27] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.044     ;
+; -13.377 ; \ledblink:count[9]  ; \ledblink:count[28] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.044     ;
+; -13.377 ; \ledblink:count[9]  ; \ledblink:count[29] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.044     ;
+; -13.377 ; \ledblink:count[9]  ; \ledblink:count[30] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.044     ;
+; -13.367 ; \ledblink:count[9]  ; \ledblink:count[24] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.034     ;
+; -13.367 ; \ledblink:count[9]  ; \ledblink:count[23] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.034     ;
+; -13.367 ; \ledblink:count[9]  ; \ledblink:count[22] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.034     ;
+; -13.367 ; \ledblink:count[9]  ; \ledblink:count[20] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.034     ;
+; -13.367 ; \ledblink:count[9]  ; \ledblink:count[21] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.034     ;
+; -13.367 ; \ledblink:count[9]  ; \ledblink:count[19] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.034     ;
+; -13.367 ; \ledblink:count[9]  ; \ledblink:count[18] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.034     ;
+; -13.367 ; \ledblink:count[9]  ; \ledblink:count[16] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.034     ;
+; -13.367 ; \ledblink:count[9]  ; \ledblink:count[15] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.034     ;
+; -13.367 ; \ledblink:count[9]  ; \ledblink:count[17] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 14.034     ;
+; -13.270 ; \ledblink:count[22] ; \ledblink:count[8]  ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.937     ;
+; -13.270 ; \ledblink:count[22] ; \ledblink:count[7]  ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.937     ;
+; -13.270 ; \ledblink:count[22] ; \ledblink:count[9]  ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.937     ;
+; -13.270 ; \ledblink:count[22] ; \ledblink:count[10] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.937     ;
+; -13.270 ; \ledblink:count[22] ; \ledblink:count[11] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.937     ;
+; -13.270 ; \ledblink:count[22] ; \ledblink:count[12] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.937     ;
+; -13.270 ; \ledblink:count[22] ; \ledblink:count[13] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.937     ;
+; -13.270 ; \ledblink:count[22] ; \ledblink:count[14] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.937     ;
+; -13.270 ; \ledblink:count[22] ; \ledblink:count[6]  ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.937     ;
+; -13.270 ; \ledblink:count[22] ; \ledblink:count[5]  ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.937     ;
+; -13.204 ; \ledblink:count[12] ; \ledblink:count[25] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.871     ;
+; -13.204 ; \ledblink:count[12] ; \ledblink:count[26] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.871     ;
+; -13.204 ; \ledblink:count[12] ; \ledblink:count[27] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.871     ;
+; -13.204 ; \ledblink:count[12] ; \ledblink:count[28] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.871     ;
+; -13.204 ; \ledblink:count[12] ; \ledblink:count[29] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.871     ;
+; -13.204 ; \ledblink:count[12] ; \ledblink:count[30] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.871     ;
+; -13.194 ; \ledblink:count[12] ; \ledblink:count[24] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.861     ;
+; -13.194 ; \ledblink:count[12] ; \ledblink:count[23] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.861     ;
+; -13.194 ; \ledblink:count[12] ; \ledblink:count[22] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.861     ;
+; -13.194 ; \ledblink:count[12] ; \ledblink:count[20] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.861     ;
+; -13.194 ; \ledblink:count[12] ; \ledblink:count[21] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.861     ;
+; -13.194 ; \ledblink:count[12] ; \ledblink:count[19] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.861     ;
+; -13.194 ; \ledblink:count[12] ; \ledblink:count[18] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.861     ;
+; -13.194 ; \ledblink:count[12] ; \ledblink:count[16] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.861     ;
+; -13.194 ; \ledblink:count[12] ; \ledblink:count[15] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.861     ;
+; -13.194 ; \ledblink:count[12] ; \ledblink:count[17] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.861     ;
+; -13.036 ; \ledblink:count[10] ; \ledblink:count[25] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.703     ;
+; -13.036 ; \ledblink:count[10] ; \ledblink:count[26] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.703     ;
+; -13.036 ; \ledblink:count[10] ; \ledblink:count[27] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.703     ;
+; -13.036 ; \ledblink:count[10] ; \ledblink:count[28] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.703     ;
+; -13.036 ; \ledblink:count[10] ; \ledblink:count[29] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.703     ;
+; -13.036 ; \ledblink:count[10] ; \ledblink:count[30] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.703     ;
+; -13.026 ; \ledblink:count[10] ; \ledblink:count[24] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.693     ;
+; -13.026 ; \ledblink:count[10] ; \ledblink:count[23] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.693     ;
+; -13.026 ; \ledblink:count[10] ; \ledblink:count[22] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.693     ;
+; -13.026 ; \ledblink:count[10] ; \ledblink:count[20] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.693     ;
+; -13.026 ; \ledblink:count[10] ; \ledblink:count[21] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.693     ;
+; -13.026 ; \ledblink:count[10] ; \ledblink:count[19] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.693     ;
+; -13.026 ; \ledblink:count[10] ; \ledblink:count[18] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.693     ;
+; -13.026 ; \ledblink:count[10] ; \ledblink:count[16] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.693     ;
+; -13.026 ; \ledblink:count[10] ; \ledblink:count[15] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.693     ;
+; -13.026 ; \ledblink:count[10] ; \ledblink:count[17] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.693     ;
+; -12.966 ; mux[1]              ; \ledblink:count[25] ; sck          ; refclk      ; 0.500        ; -0.110     ; 13.023     ;
+; -12.966 ; mux[1]              ; \ledblink:count[26] ; sck          ; refclk      ; 0.500        ; -0.110     ; 13.023     ;
+; -12.966 ; mux[1]              ; \ledblink:count[27] ; sck          ; refclk      ; 0.500        ; -0.110     ; 13.023     ;
+; -12.966 ; mux[1]              ; \ledblink:count[28] ; sck          ; refclk      ; 0.500        ; -0.110     ; 13.023     ;
+; -12.966 ; mux[1]              ; \ledblink:count[29] ; sck          ; refclk      ; 0.500        ; -0.110     ; 13.023     ;
+; -12.966 ; mux[1]              ; \ledblink:count[30] ; sck          ; refclk      ; 0.500        ; -0.110     ; 13.023     ;
+; -12.957 ; \ledblink:count[11] ; \ledblink:count[8]  ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.624     ;
+; -12.957 ; \ledblink:count[11] ; \ledblink:count[7]  ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.624     ;
+; -12.957 ; \ledblink:count[11] ; \ledblink:count[9]  ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.624     ;
+; -12.957 ; \ledblink:count[11] ; \ledblink:count[10] ; refclk       ; refclk      ; 1.000        ; 0.000      ; 13.624     ;
++---------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Setup: 'sigclk'                                                                                                    ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; -3.973 ; eventcounter[3]  ; eventcounter[10] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; eventcounter[3]  ; eventcounter[12] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; eventcounter[3]  ; eventcounter[9]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; eventcounter[3]  ; eventcounter[8]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; eventcounter[3]  ; eventcounter[11] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.640      ;
+; -3.960 ; eventcounter[3]  ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; eventcounter[3]  ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; eventcounter[3]  ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.627      ;
+; -3.851 ; eventcounter[4]  ; eventcounter[10] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; eventcounter[4]  ; eventcounter[12] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; eventcounter[4]  ; eventcounter[9]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; eventcounter[4]  ; eventcounter[8]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; eventcounter[4]  ; eventcounter[11] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.518      ;
+; -3.838 ; eventcounter[4]  ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.505      ;
+; -3.838 ; eventcounter[4]  ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.505      ;
+; -3.838 ; eventcounter[4]  ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.505      ;
+; -3.806 ; eventcounter[1]  ; eventcounter[10] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.473      ;
+; -3.806 ; eventcounter[1]  ; eventcounter[12] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.473      ;
+; -3.806 ; eventcounter[1]  ; eventcounter[9]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.473      ;
+; -3.806 ; eventcounter[1]  ; eventcounter[8]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.473      ;
+; -3.806 ; eventcounter[1]  ; eventcounter[11] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.473      ;
+; -3.793 ; eventcounter[1]  ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.460      ;
+; -3.793 ; eventcounter[1]  ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.460      ;
+; -3.793 ; eventcounter[1]  ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.460      ;
+; -3.654 ; eventcounter[2]  ; eventcounter[10] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; eventcounter[2]  ; eventcounter[12] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; eventcounter[2]  ; eventcounter[9]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; eventcounter[2]  ; eventcounter[8]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; eventcounter[2]  ; eventcounter[11] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.321      ;
+; -3.641 ; eventcounter[2]  ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.308      ;
+; -3.641 ; eventcounter[2]  ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.308      ;
+; -3.641 ; eventcounter[2]  ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.308      ;
+; -3.615 ; eventcounter[0]  ; eventcounter[10] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.282      ;
+; -3.615 ; eventcounter[0]  ; eventcounter[12] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.282      ;
+; -3.615 ; eventcounter[0]  ; eventcounter[9]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.282      ;
+; -3.615 ; eventcounter[0]  ; eventcounter[8]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.282      ;
+; -3.615 ; eventcounter[0]  ; eventcounter[11] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.282      ;
+; -3.602 ; eventcounter[0]  ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.269      ;
+; -3.602 ; eventcounter[0]  ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.269      ;
+; -3.602 ; eventcounter[0]  ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.269      ;
+; -3.595 ; eventcounter[6]  ; eventcounter[10] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.262      ;
+; -3.595 ; eventcounter[6]  ; eventcounter[12] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.262      ;
+; -3.595 ; eventcounter[6]  ; eventcounter[9]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.262      ;
+; -3.595 ; eventcounter[6]  ; eventcounter[8]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.262      ;
+; -3.595 ; eventcounter[6]  ; eventcounter[11] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.262      ;
+; -3.582 ; eventcounter[6]  ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.249      ;
+; -3.582 ; eventcounter[6]  ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.249      ;
+; -3.582 ; eventcounter[6]  ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.249      ;
+; -3.496 ; eventcounter[5]  ; eventcounter[10] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.163      ;
+; -3.496 ; eventcounter[5]  ; eventcounter[12] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.163      ;
+; -3.496 ; eventcounter[5]  ; eventcounter[9]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.163      ;
+; -3.496 ; eventcounter[5]  ; eventcounter[8]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.163      ;
+; -3.496 ; eventcounter[5]  ; eventcounter[11] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.163      ;
+; -3.483 ; eventcounter[5]  ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.150      ;
+; -3.483 ; eventcounter[5]  ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.150      ;
+; -3.483 ; eventcounter[5]  ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.150      ;
+; -3.415 ; eventcounter[2]  ; eventhold[2]     ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.082      ;
+; -3.361 ; eventcounter[8]  ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.028      ;
+; -3.361 ; eventcounter[8]  ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.028      ;
+; -3.361 ; eventcounter[8]  ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.028      ;
+; -3.344 ; eventcounter[7]  ; eventcounter[10] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.011      ;
+; -3.344 ; eventcounter[7]  ; eventcounter[12] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.011      ;
+; -3.344 ; eventcounter[7]  ; eventcounter[9]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.011      ;
+; -3.344 ; eventcounter[7]  ; eventcounter[8]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.011      ;
+; -3.344 ; eventcounter[7]  ; eventcounter[11] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 4.011      ;
+; -3.331 ; eventcounter[7]  ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.998      ;
+; -3.331 ; eventcounter[7]  ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.998      ;
+; -3.331 ; eventcounter[7]  ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.998      ;
+; -3.231 ; eventcounter[9]  ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.898      ;
+; -3.231 ; eventcounter[9]  ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.898      ;
+; -3.231 ; eventcounter[9]  ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.898      ;
+; -3.198 ; eventcounter[1]  ; eventcounter[6]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.865      ;
+; -3.198 ; eventcounter[1]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.865      ;
+; -3.198 ; eventcounter[1]  ; eventcounter[5]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.865      ;
+; -3.198 ; eventcounter[1]  ; eventcounter[4]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.865      ;
+; -3.198 ; eventcounter[1]  ; eventcounter[3]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.865      ;
+; -3.189 ; eventcounter[11] ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.856      ;
+; -3.189 ; eventcounter[11] ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.856      ;
+; -3.189 ; eventcounter[11] ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.856      ;
+; -3.109 ; eventcounter[3]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.776      ;
+; -3.108 ; eventcounter[10] ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.775      ;
+; -3.108 ; eventcounter[10] ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.775      ;
+; -3.108 ; eventcounter[10] ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.775      ;
+; -3.055 ; eventcounter[12] ; eventcounter[15] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.722      ;
+; -3.055 ; eventcounter[12] ; eventcounter[14] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.722      ;
+; -3.055 ; eventcounter[12] ; eventcounter[13] ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.722      ;
+; -3.046 ; eventcounter[2]  ; eventcounter[6]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; eventcounter[2]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; eventcounter[2]  ; eventcounter[5]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; eventcounter[2]  ; eventcounter[4]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; eventcounter[2]  ; eventcounter[3]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.713      ;
+; -3.007 ; eventcounter[0]  ; eventcounter[6]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.674      ;
+; -3.007 ; eventcounter[0]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.674      ;
+; -3.007 ; eventcounter[0]  ; eventcounter[5]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.674      ;
+; -3.007 ; eventcounter[0]  ; eventcounter[4]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.674      ;
+; -3.007 ; eventcounter[0]  ; eventcounter[3]  ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.674      ;
+; -2.999 ; siggate          ; eventhold[14]    ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.666      ;
+; -2.999 ; siggate          ; eventhold[15]    ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.666      ;
+; -2.996 ; siggate          ; eventhold[2]     ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.663      ;
+; -2.996 ; siggate          ; eventhold[10]    ; sigclk       ; sigclk      ; 1.000        ; 0.000      ; 3.663      ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Setup: 'sck'                                                                                               ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; -1.852 ; readindex[0] ; readindex[3] ; sck          ; sck         ; 1.000        ; 0.000      ; 2.519      ;
+; -1.807 ; readindex[1] ; readindex[2] ; sck          ; sck         ; 1.000        ; 0.000      ; 2.474      ;
+; -1.693 ; readindex[2] ; readindex[3] ; sck          ; sck         ; 1.000        ; 0.000      ; 2.360      ;
+; -1.496 ; readindex[1] ; readindex[3] ; sck          ; sck         ; 1.000        ; 0.000      ; 2.163      ;
+; -1.493 ; readindex[1] ; readindex[1] ; sck          ; sck         ; 1.000        ; 0.000      ; 2.160      ;
+; -1.482 ; readindex[2] ; readindex[2] ; sck          ; sck         ; 1.000        ; 0.000      ; 2.149      ;
+; -1.391 ; mux[1]       ; mux[2]       ; sck          ; sck         ; 1.000        ; 0.000      ; 2.058      ;
+; -1.280 ; readindex[0] ; readindex[2] ; sck          ; sck         ; 1.000        ; 0.000      ; 1.947      ;
+; -1.280 ; readindex[0] ; readindex[1] ; sck          ; sck         ; 1.000        ; 0.000      ; 1.947      ;
+; -1.267 ; readindex[0] ; readindex[0] ; sck          ; sck         ; 1.000        ; 0.000      ; 1.934      ;
+; -1.238 ; readindex[3] ; readindex[3] ; sck          ; sck         ; 1.000        ; 0.000      ; 1.905      ;
+; -1.195 ; mux[2]       ; mux[3]       ; sck          ; sck         ; 1.000        ; 0.000      ; 1.862      ;
+; -1.031 ; mux[0]       ; mux[1]       ; sck          ; sck         ; 1.000        ; 0.000      ; 1.698      ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Hold: 'sigclk'                                                                                                    ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; 1.405 ; eventcounter[15] ; eventhold[15]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 1.626      ;
+; 1.418 ; eventcounter[14] ; eventhold[14]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 1.639      ;
+; 1.668 ; eventcounter[0]  ; eventcounter[0]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 1.889      ;
+; 1.905 ; syn1siggate      ; siggate          ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.126      ;
+; 2.108 ; eventcounter[5]  ; eventcounter[5]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.329      ;
+; 2.117 ; eventcounter[10] ; eventcounter[10] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; eventcounter[9]  ; eventcounter[9]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.338      ;
+; 2.124 ; eventcounter[8]  ; eventcounter[8]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.345      ;
+; 2.126 ; eventcounter[7]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.347      ;
+; 2.137 ; eventcounter[15] ; eventcounter[15] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.358      ;
+; 2.139 ; eventcounter[0]  ; eventcounter[1]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.360      ;
+; 2.212 ; eventcounter[11] ; eventcounter[11] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.433      ;
+; 2.221 ; eventcounter[6]  ; eventcounter[6]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; eventcounter[1]  ; eventcounter[1]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.442      ;
+; 2.230 ; eventcounter[3]  ; eventcounter[3]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; eventcounter[2]  ; eventcounter[2]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; eventcounter[4]  ; eventcounter[4]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.452      ;
+; 2.239 ; eventcounter[13] ; eventcounter[13] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.460      ;
+; 2.240 ; eventcounter[12] ; eventcounter[12] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.461      ;
+; 2.249 ; eventcounter[14] ; eventcounter[14] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.470      ;
+; 2.465 ; eventcounter[11] ; eventhold[11]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.686      ;
+; 2.491 ; eventcounter[10] ; eventhold[10]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.712      ;
+; 2.633 ; mux[3]           ; siggate          ; sck          ; sigclk      ; -0.500       ; -0.110     ; 2.244      ;
+; 2.695 ; eventcounter[3]  ; eventhold[3]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.916      ;
+; 2.711 ; siggate          ; eventhold[1]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.932      ;
+; 2.711 ; siggate          ; eventhold[5]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.932      ;
+; 2.711 ; siggate          ; eventhold[13]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.932      ;
+; 2.711 ; siggate          ; eventhold[9]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 2.932      ;
+; 2.827 ; eventcounter[13] ; eventhold[13]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.048      ;
+; 2.927 ; eventcounter[4]  ; eventhold[4]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.148      ;
+; 2.932 ; eventcounter[7]  ; eventhold[7]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.153      ;
+; 2.940 ; eventcounter[5]  ; eventcounter[6]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.161      ;
+; 2.949 ; eventcounter[9]  ; eventcounter[10] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; eventcounter[10] ; eventcounter[11] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.170      ;
+; 2.956 ; eventcounter[8]  ; eventcounter[9]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.177      ;
+; 2.971 ; eventcounter[0]  ; eventcounter[2]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.192      ;
+; 2.990 ; eventcounter[6]  ; eventhold[6]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.211      ;
+; 3.027 ; eventcounter[8]  ; eventhold[8]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.248      ;
+; 3.051 ; eventcounter[5]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.272      ;
+; 3.060 ; eventcounter[10] ; eventcounter[12] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; eventcounter[9]  ; eventcounter[11] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.281      ;
+; 3.067 ; eventcounter[8]  ; eventcounter[10] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.288      ;
+; 3.075 ; eventcounter[5]  ; eventhold[5]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.296      ;
+; 3.086 ; eventcounter[9]  ; eventhold[9]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.307      ;
+; 3.122 ; eventcounter[1]  ; eventhold[1]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.343      ;
+; 3.152 ; eventcounter[11] ; eventcounter[12] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.373      ;
+; 3.161 ; eventcounter[1]  ; eventcounter[2]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; eventcounter[6]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.382      ;
+; 3.170 ; eventcounter[3]  ; eventcounter[4]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.391      ;
+; 3.171 ; eventcounter[4]  ; eventcounter[5]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171 ; eventcounter[9]  ; eventcounter[12] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.392      ;
+; 3.178 ; eventcounter[8]  ; eventcounter[11] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.399      ;
+; 3.179 ; eventcounter[13] ; eventcounter[14] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.400      ;
+; 3.186 ; eventcounter[0]  ; eventhold[0]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.407      ;
+; 3.189 ; eventcounter[14] ; eventcounter[15] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.410      ;
+; 3.281 ; eventcounter[3]  ; eventcounter[5]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.502      ;
+; 3.282 ; eventcounter[4]  ; eventcounter[6]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.503      ;
+; 3.289 ; eventcounter[8]  ; eventcounter[12] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.510      ;
+; 3.290 ; eventcounter[13] ; eventcounter[15] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.511      ;
+; 3.338 ; eventcounter[12] ; eventhold[12]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.559      ;
+; 3.392 ; eventcounter[3]  ; eventcounter[6]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.613      ;
+; 3.393 ; eventcounter[4]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.614      ;
+; 3.440 ; eventcounter[0]  ; eventcounter[6]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.661      ;
+; 3.440 ; eventcounter[0]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.661      ;
+; 3.440 ; eventcounter[0]  ; eventcounter[5]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.661      ;
+; 3.440 ; eventcounter[0]  ; eventcounter[4]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.661      ;
+; 3.440 ; eventcounter[0]  ; eventcounter[3]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.661      ;
+; 3.442 ; siggate          ; eventhold[2]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.663      ;
+; 3.442 ; siggate          ; eventhold[10]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.663      ;
+; 3.442 ; siggate          ; eventhold[6]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.663      ;
+; 3.442 ; siggate          ; eventhold[0]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.663      ;
+; 3.442 ; siggate          ; eventhold[4]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.663      ;
+; 3.442 ; siggate          ; eventhold[12]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.663      ;
+; 3.442 ; siggate          ; eventhold[8]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.663      ;
+; 3.442 ; siggate          ; eventhold[3]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.663      ;
+; 3.442 ; siggate          ; eventhold[11]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.663      ;
+; 3.442 ; siggate          ; eventhold[7]     ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.663      ;
+; 3.445 ; siggate          ; eventhold[14]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.666      ;
+; 3.445 ; siggate          ; eventhold[15]    ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.666      ;
+; 3.492 ; eventcounter[2]  ; eventcounter[6]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; eventcounter[2]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; eventcounter[2]  ; eventcounter[5]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; eventcounter[2]  ; eventcounter[4]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; eventcounter[2]  ; eventcounter[3]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.501 ; eventcounter[12] ; eventcounter[15] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.722      ;
+; 3.501 ; eventcounter[12] ; eventcounter[14] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.722      ;
+; 3.501 ; eventcounter[12] ; eventcounter[13] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.722      ;
+; 3.503 ; eventcounter[3]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.724      ;
+; 3.529 ; eventcounter[10] ; eventcounter[15] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; eventcounter[10] ; eventcounter[14] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; eventcounter[10] ; eventcounter[13] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.750      ;
+; 3.621 ; eventcounter[11] ; eventcounter[15] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.842      ;
+; 3.621 ; eventcounter[11] ; eventcounter[14] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.842      ;
+; 3.621 ; eventcounter[11] ; eventcounter[13] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.842      ;
+; 3.630 ; eventcounter[1]  ; eventcounter[6]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630 ; eventcounter[1]  ; eventcounter[7]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630 ; eventcounter[1]  ; eventcounter[5]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630 ; eventcounter[1]  ; eventcounter[4]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630 ; eventcounter[1]  ; eventcounter[3]  ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.851      ;
+; 3.640 ; eventcounter[9]  ; eventcounter[15] ; sigclk       ; sigclk      ; 0.000        ; 0.000      ; 3.861      ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Hold: 'sck'                                                                                               ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; 1.477 ; mux[0]       ; mux[1]       ; sck          ; sck         ; 0.000        ; 0.000      ; 1.698      ;
+; 1.641 ; mux[2]       ; mux[3]       ; sck          ; sck         ; 0.000        ; 0.000      ; 1.862      ;
+; 1.684 ; readindex[3] ; readindex[3] ; sck          ; sck         ; 0.000        ; 0.000      ; 1.905      ;
+; 1.713 ; readindex[0] ; readindex[0] ; sck          ; sck         ; 0.000        ; 0.000      ; 1.934      ;
+; 1.726 ; readindex[0] ; readindex[2] ; sck          ; sck         ; 0.000        ; 0.000      ; 1.947      ;
+; 1.726 ; readindex[0] ; readindex[1] ; sck          ; sck         ; 0.000        ; 0.000      ; 1.947      ;
+; 1.837 ; mux[1]       ; mux[2]       ; sck          ; sck         ; 0.000        ; 0.000      ; 2.058      ;
+; 1.928 ; readindex[2] ; readindex[2] ; sck          ; sck         ; 0.000        ; 0.000      ; 2.149      ;
+; 1.939 ; readindex[1] ; readindex[1] ; sck          ; sck         ; 0.000        ; 0.000      ; 2.160      ;
+; 1.942 ; readindex[1] ; readindex[3] ; sck          ; sck         ; 0.000        ; 0.000      ; 2.163      ;
+; 2.139 ; readindex[2] ; readindex[3] ; sck          ; sck         ; 0.000        ; 0.000      ; 2.360      ;
+; 2.253 ; readindex[1] ; readindex[2] ; sck          ; sck         ; 0.000        ; 0.000      ; 2.474      ;
+; 2.298 ; readindex[0] ; readindex[3] ; sck          ; sck         ; 0.000        ; 0.000      ; 2.519      ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'refclk'                                                                                                          ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; 1.663 ; siggate             ; cpugate             ; sigclk       ; refclk      ; 0.000        ; 0.000      ; 1.884      ;
+; 1.667 ; siggate             ; syn1cpugate         ; sigclk       ; refclk      ; 0.000        ; 0.000      ; 1.888      ;
+; 2.107 ; \ledblink:count[25] ; \ledblink:count[25] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.328      ;
+; 2.112 ; syn1cpugate         ; cpugate             ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.333      ;
+; 2.116 ; \ledblink:count[15] ; \ledblink:count[15] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116 ; \ledblink:count[5]  ; \ledblink:count[5]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117 ; \ledblink:count[22] ; \ledblink:count[22] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; \ledblink:count[12] ; \ledblink:count[12] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.338      ;
+; 2.126 ; \ledblink:count[26] ; \ledblink:count[26] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; \ledblink:count[24] ; \ledblink:count[24] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; \ledblink:count[7]  ; \ledblink:count[7]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; \ledblink:count[14] ; \ledblink:count[14] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; \ledblink:count[16] ; \ledblink:count[16] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; \ledblink:count[17] ; \ledblink:count[17] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; \ledblink:count[6]  ; \ledblink:count[6]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.347      ;
+; 2.127 ; \ledblink:count[4]  ; \ledblink:count[4]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.348      ;
+; 2.135 ; \ledblink:count[27] ; \ledblink:count[27] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.356      ;
+; 2.212 ; \ledblink:count[3]  ; \ledblink:count[3]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.433      ;
+; 2.221 ; \ledblink:count[23] ; \ledblink:count[23] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; \ledblink:count[18] ; \ledblink:count[18] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; \ledblink:count[8]  ; \ledblink:count[8]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; \ledblink:count[13] ; \ledblink:count[13] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.442      ;
+; 2.230 ; \ledblink:count[20] ; \ledblink:count[20] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230 ; \ledblink:count[10] ; \ledblink:count[10] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230 ; \ledblink:count[1]  ; \ledblink:count[1]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230 ; \ledblink:count[0]  ; \ledblink:count[0]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; \ledblink:count[21] ; \ledblink:count[21] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; \ledblink:count[19] ; \ledblink:count[19] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; \ledblink:count[9]  ; \ledblink:count[9]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; \ledblink:count[11] ; \ledblink:count[11] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.452      ;
+; 2.232 ; \ledblink:count[28] ; \ledblink:count[28] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.453      ;
+; 2.249 ; \ledblink:count[29] ; \ledblink:count[29] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.470      ;
+; 2.250 ; \ledblink:count[30] ; \ledblink:count[30] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.471      ;
+; 2.619 ; \ledblink:count[2]  ; \ledblink:count[2]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 2.840      ;
+; 2.882 ; mux[2]              ; cpugate             ; sck          ; refclk      ; -0.500       ; -0.110     ; 2.493      ;
+; 2.939 ; \ledblink:count[25] ; \ledblink:count[26] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.160      ;
+; 2.948 ; \ledblink:count[15] ; \ledblink:count[16] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.169      ;
+; 2.948 ; \ledblink:count[5]  ; \ledblink:count[6]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.169      ;
+; 2.949 ; \ledblink:count[22] ; \ledblink:count[23] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; \ledblink:count[12] ; \ledblink:count[13] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.170      ;
+; 2.958 ; \ledblink:count[17] ; \ledblink:count[18] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; \ledblink:count[7]  ; \ledblink:count[8]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; \ledblink:count[6]  ; \ledblink:count[7]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; \ledblink:count[16] ; \ledblink:count[17] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; \ledblink:count[26] ; \ledblink:count[27] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.179      ;
+; 2.967 ; \ledblink:count[27] ; \ledblink:count[28] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.188      ;
+; 3.050 ; \ledblink:count[25] ; \ledblink:count[27] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.271      ;
+; 3.059 ; \ledblink:count[5]  ; \ledblink:count[7]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.280      ;
+; 3.059 ; \ledblink:count[15] ; \ledblink:count[17] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.280      ;
+; 3.060 ; \ledblink:count[22] ; \ledblink:count[24] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; \ledblink:count[12] ; \ledblink:count[14] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.281      ;
+; 3.069 ; \ledblink:count[17] ; \ledblink:count[19] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; \ledblink:count[7]  ; \ledblink:count[9]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; \ledblink:count[16] ; \ledblink:count[18] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; \ledblink:count[6]  ; \ledblink:count[8]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; \ledblink:count[26] ; \ledblink:count[28] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.290      ;
+; 3.078 ; \ledblink:count[27] ; \ledblink:count[29] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.299      ;
+; 3.152 ; \ledblink:count[3]  ; \ledblink:count[4]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.373      ;
+; 3.161 ; \ledblink:count[23] ; \ledblink:count[24] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; \ledblink:count[13] ; \ledblink:count[14] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; \ledblink:count[18] ; \ledblink:count[19] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; \ledblink:count[8]  ; \ledblink:count[9]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; \ledblink:count[25] ; \ledblink:count[28] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.382      ;
+; 3.170 ; \ledblink:count[20] ; \ledblink:count[21] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; \ledblink:count[10] ; \ledblink:count[11] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; \ledblink:count[1]  ; \ledblink:count[2]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; \ledblink:count[0]  ; \ledblink:count[1]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; \ledblink:count[15] ; \ledblink:count[18] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; \ledblink:count[5]  ; \ledblink:count[8]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.391      ;
+; 3.171 ; \ledblink:count[21] ; \ledblink:count[22] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171 ; \ledblink:count[11] ; \ledblink:count[12] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.392      ;
+; 3.172 ; \ledblink:count[28] ; \ledblink:count[29] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.393      ;
+; 3.180 ; \ledblink:count[16] ; \ledblink:count[19] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.401      ;
+; 3.180 ; \ledblink:count[6]  ; \ledblink:count[9]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.401      ;
+; 3.180 ; \ledblink:count[26] ; \ledblink:count[29] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.401      ;
+; 3.272 ; \ledblink:count[25] ; \ledblink:count[29] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.493      ;
+; 3.281 ; \ledblink:count[1]  ; \ledblink:count[3]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281 ; \ledblink:count[0]  ; \ledblink:count[2]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281 ; \ledblink:count[20] ; \ledblink:count[22] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281 ; \ledblink:count[10] ; \ledblink:count[12] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281 ; \ledblink:count[15] ; \ledblink:count[19] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281 ; \ledblink:count[5]  ; \ledblink:count[9]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.502      ;
+; 3.282 ; \ledblink:count[21] ; \ledblink:count[23] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.503      ;
+; 3.282 ; \ledblink:count[11] ; \ledblink:count[13] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.503      ;
+; 3.392 ; \ledblink:count[1]  ; \ledblink:count[4]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.613      ;
+; 3.392 ; \ledblink:count[0]  ; \ledblink:count[3]  ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.613      ;
+; 3.392 ; \ledblink:count[20] ; \ledblink:count[23] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.613      ;
+; 3.392 ; \ledblink:count[10] ; \ledblink:count[13] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.613      ;
+; 3.393 ; \ledblink:count[21] ; \ledblink:count[24] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.614      ;
+; 3.393 ; \ledblink:count[11] ; \ledblink:count[14] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.614      ;
+; 3.492 ; \ledblink:count[19] ; \ledblink:count[24] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; \ledblink:count[19] ; \ledblink:count[23] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; \ledblink:count[19] ; \ledblink:count[22] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; \ledblink:count[19] ; \ledblink:count[20] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; \ledblink:count[19] ; \ledblink:count[21] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; \ledblink:count[9]  ; \ledblink:count[10] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; \ledblink:count[9]  ; \ledblink:count[11] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; \ledblink:count[9]  ; \ledblink:count[12] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; \ledblink:count[9]  ; \ledblink:count[13] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; \ledblink:count[9]  ; \ledblink:count[14] ; refclk       ; refclk      ; 0.000        ; 0.000      ; 3.713      ;
++-------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; refclk     ; refclk   ; 4881     ; 0        ; 0        ; 0        ;
+; sck        ; refclk   ; 0        ; 3297     ; 0        ; 0        ;
+; sigclk     ; refclk   ; 2        ; 0        ; 0        ; 0        ;
+; sck        ; sck      ; 10       ; 0        ; 0        ; 3        ;
+; sck        ; sigclk   ; 0        ; 1        ; 0        ; 0        ;
+; sigclk     ; sigclk   ; 264      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; refclk     ; refclk   ; 4881     ; 0        ; 0        ; 0        ;
+; sck        ; refclk   ; 0        ; 3297     ; 0        ; 0        ;
+; sigclk     ; refclk   ; 2        ; 0        ; 0        ; 0        ;
+; sck        ; sck      ; 10       ; 0        ; 0        ; 3        ;
+; sck        ; sigclk   ; 0        ; 1        ; 0        ; 0        ;
+; sigclk     ; sigclk   ; 264      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 15    ; 15   ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 32    ; 32   ;
++---------------------------------+-------+------+
+
+
++--------------------------------------+
+; Clock Status Summary                 ;
++--------+--------+------+-------------+
+; Target ; Clock  ; Type ; Status      ;
++--------+--------+------+-------------+
+; refclk ; refclk ; Base ; Constrained ;
+; sck    ; sck    ; Base ; Constrained ;
+; sigclk ; sigclk ; Base ; Constrained ;
++--------+--------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; modeshift  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; mosi       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; refclk     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sigin1     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sigin2     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ss         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; icp0        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; icp1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; int1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; led         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; led2        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; miso        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rampstartP  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rampstopN   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sigout      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; modeshift  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; mosi       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; refclk     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sigin1     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sigin2     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ss         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; icp0        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; icp1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; int1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; led         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; led2        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; miso        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rampstartP  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rampstopN   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sigout      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Thu Oct  8 16:06:59 2020
+Info: Command: quartus_sta freqcounter -c top
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'top.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name refclk refclk
+    Info (332105): create_clock -period 1.000 -name sigclk sigclk
+    Info (332105): create_clock -period 1.000 -name sck sck
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -13.826
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -13.826            -433.769 refclk 
+    Info (332119):    -3.973            -102.353 sigclk 
+    Info (332119):    -1.852             -10.036 sck 
+Info (332146): Worst-case hold slack is 1.405
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.405               0.000 sigclk 
+    Info (332119):     1.477               0.000 sck 
+    Info (332119):     1.663               0.000 refclk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 refclk 
+    Info (332119):    -2.289              -2.289 sck 
+    Info (332119):    -2.289              -2.289 sigclk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 355 megabytes
+    Info: Processing ended: Thu Oct  8 16:06:59 2020
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

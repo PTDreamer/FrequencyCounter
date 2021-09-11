@@ -1,0 +1,41 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'refclk'
+Slack : -13.826
+TNS   : -433.769
+
+Type  : Setup 'sigclk'
+Slack : -3.973
+TNS   : -102.353
+
+Type  : Setup 'sck'
+Slack : -1.852
+TNS   : -10.036
+
+Type  : Hold 'sigclk'
+Slack : 1.405
+TNS   : 0.000
+
+Type  : Hold 'sck'
+Slack : 1.477
+TNS   : 0.000
+
+Type  : Hold 'refclk'
+Slack : 1.663
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'refclk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'sck'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'sigclk'
+Slack : -2.289
+TNS   : -2.289
+
+------------------------------------------------------------

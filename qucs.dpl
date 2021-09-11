@@ -1,0 +1,43 @@
+<Qucs Schematic 0.0.20>
+<Properties>
+  <View=-540,90,1498,930,1.21,810,240>
+  <Grid=10,10,0>
+  <DataSet=qucs.dat>
+  <DataDisplay=qucs.sch>
+  <OpenDisplay=1>
+  <Script=qucs.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Tab 470 630 300 200 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 19 315 0 225 "" "" "" "">
+	<"dB_S12" #0000ff 0 3 0 0 0>
+	<"dB_S13" #0000ff 0 3 0 0 0>
+  </Tab>
+  <Rect 460 830 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "" "">
+	<"S[1,3]" #0000ff 0 3 0 0 0>
+	<"S[3,1]" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Tab 420 910 300 200 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 19 315 0 225 "" "" "" "">
+	<"S[1,3]" #0000ff 0 3 1 0 0>
+  </Tab>
+  <Rect 440 270 240 160 3 #c0c0c0 1 00 1 1e+06 2e+06 1e+07 1 -2 1 1.37469 1 -1 1 1 315 0 225 "" "" "" "">
+	<"S[2,1]" #ff0000 0 3 0 0 0>
+	<"dB_S21" #0000ff 0 3 0 0 0>
+	<"dB_S13" #ff00ff 0 3 0 0 0>
+	<"dB_S21" #00ff00 0 3 0 0 0>
+	<"dB_S31" #00ffff 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

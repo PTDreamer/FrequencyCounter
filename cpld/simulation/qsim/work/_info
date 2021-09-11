@@ -1,0 +1,101 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/jose/code/Projetos/FrequencyCounter/cpld/simulation/qsim
+Etop
+Z1 w1598736195
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx5 maxii 15 maxii_atom_pack 0 22 :^7>Cn_]GFmA;d>LdGnJ21
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx5 maxii 16 maxii_components 0 22 e94fjXDM6l4nUG7:k=<SB0
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 28
+R0
+Z8 8top.vho
+Z9 Ftop.vho
+l0
+L35 1
+VzfYNPC=D9K3FTDSlb240j1
+!s100 =Xob[a9hCXa8PU2g^c;Ai1
+Z10 OV;C;2020.1;71
+32
+Z11 !s110 1598736196
+!i10b 1
+Z12 !s108 1598736196.000000
+Z13 !s90 -work|work|top.vho|
+Z14 !s107 top.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 3 top 0 22 zfYNPC=D9K3FTDSlb240j1
+!i122 28
+l139
+L58 1492
+VzK]6C_I9YEe1><_kD4]^33
+!s100 PY=kn`<=6Y3VW>dd`FDkW3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Etop_vhd_vec_tst
+Z17 w1598736194
+R6
+R7
+!i122 29
+R0
+Z18 8Waveform.vwf.vht
+Z19 FWaveform.vwf.vht
+l0
+L32 1
+Vc7ORh82j0fL3dGC4eFm4k2
+!s100 <P>A;@11]XQbG;eP>UZgE0
+R10
+32
+R11
+!i10b 1
+R12
+Z20 !s90 -work|work|Waveform.vwf.vht|
+Z21 !s107 Waveform.vwf.vht|
+!i113 1
+R15
+R16
+Atop_arch
+R6
+R7
+Z22 DEx4 work 15 top_vhd_vec_tst 0 22 c7ORh82j0fL3dGC4eFm4k2
+!i122 29
+l71
+L34 155
+VLU[jFOGL]7bKA:5MHLAZ`1
+!s100 `4a;2m[[SN8g]2RB`G2]L2
+R10
+32
+R11
+!i10b 1
+R12
+R20
+R21
+!i113 1
+R15
+R16

@@ -1,0 +1,47 @@
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sigclk
+set_location_assignment PIN_77 -to led
+set_location_assignment PIN_4 -to icp1
+set_location_assignment PIN_2 -to int1
+set_location_assignment PIN_68 -to led2
+set_location_assignment PIN_15 -to miso
+set_location_assignment PIN_95 -to modeshift
+set_location_assignment PIN_92 -to mosi
+set_location_assignment PIN_16 -to rampstartP
+set_location_assignment PIN_3 -to rampstopN
+set_location_assignment PIN_12 -to refclk
+set_location_assignment PIN_62 -to sck
+set_location_assignment PIN_14 -to sigclk
+set_location_assignment PIN_5 -to sigin1
+set_location_assignment PIN_96 -to sigin2
+set_location_assignment PIN_97 -to sigout
+set_location_assignment PIN_64 -to ss
+set_location_assignment PIN_17 -to icp0
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE EPM240T100C5
+set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:55:24  AUGUST 21, 2020"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
+set_global_assignment -name POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR 3.3V
+set_global_assignment -name VHDL_FILE top.vhd
+set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
+set_global_assignment -name ENABLE_DEVICE_WIDE_RESET ON
+set_global_assignment -name ENABLE_DEVICE_WIDE_OE ON
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf

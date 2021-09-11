@@ -1,0 +1,39 @@
+# Copyright (C) 2020  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+
+# Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+# File: /home/jose/code/Projetos/FrequencyCounter/cpld/freqcounter_test.csv
+# Generated on: Fri Oct  2 14:40:21 2020
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,Fitter Location,I/O Standard,Reserved,Current Strength,Strict Preservation
+icp0,Output,PIN_17,1,PIN_17,,,,
+icp1,Output,PIN_4,1,PIN_4,3.3-V LVTTL,,,
+int1,Output,PIN_2,1,PIN_2,3.3-V LVTTL,,,
+led,Output,PIN_77,2,PIN_77,3.3-V LVTTL,,,
+led2,Output,PIN_68,2,PIN_68,3.3-V LVTTL,,,
+miso,Output,PIN_15,1,PIN_15,3.3-V LVTTL,,,
+modeshift,Input,PIN_95,2,PIN_95,3.3-V LVTTL,,,
+mosi,Input,PIN_92,2,PIN_92,3.3-V LVTTL,,,
+rampstartP,Output,PIN_16,1,PIN_16,3.3-V LVTTL,,,
+rampstopN,Output,PIN_3,1,PIN_3,3.3-V LVTTL,,,
+refclk,Input,PIN_12,1,PIN_12,3.3-V LVTTL,,,
+sck,Input,PIN_62,2,PIN_62,3.3-V LVTTL,,,
+sigclk,Input,PIN_14,1,PIN_14,3.3-V LVTTL,,,
+sigin1,Input,PIN_5,1,PIN_5,3.3-V LVTTL,,,
+sigin2,Input,PIN_96,2,PIN_96,3.3-V LVTTL,,,
+sigout,Output,PIN_97,2,PIN_97,3.3-V LVTTL,,,
+ss,Input,PIN_64,2,PIN_64,3.3-V LVTTL,,,

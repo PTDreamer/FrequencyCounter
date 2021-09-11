@@ -1,0 +1,11 @@
+(fp_lib_table
+  (lib (name ti0)(type KiCad)(uri /home/jose/code/Projetos/FrequencyCounter/TI/KiCAD/2020-09-07_13-21-51/footprints.pretty)(options "")(descr ""))
+  (lib (name ti1)(type KiCad)(uri /home/jose/code/Projetos/FrequencyCounter/TI/KiCAD/2020-09-07_11-09-15/footprints.pretty)(options "")(descr ""))
+  (lib (name ti2)(type KiCad)(uri /home/jose/code/Projetos/FrequencyCounter/TI/KiCAD/2020-09-04_13-16-50/footprints.pretty)(options "")(descr ""))
+  (lib (name onsemi)(type KiCad)(uri /home/jose/code/Projetos/FrequencyCounter/onsemi/eec.pretty)(options "")(descr ""))
+  (lib (name ad)(type KiCad)(uri /home/jose/code/Projetos/FrequencyCounter/KiCAD_symbols3/eec.pretty)(options "")(descr ""))
+  (lib (name hmc)(type KiCad)(uri /home/jose/code/Projetos/FrequencyCounter/KiCAD_symbols2/2020-08-27_22-45-43/footprints.pretty)(options "")(descr ""))
+  (lib (name ad2)(type KiCad)(uri /home/jose/code/Projetos/FrequencyCounter/KiCAD_symbols/2020-08-27_21-48-35/footprints.pretty)(options "")(descr ""))
+  (lib (name nc7w)(type KiCad)(uri /home/jose/code/Projetos/FrequencyCounter/fairchild/KiCAD/2020-09-04_11-38-07/footprints.pretty)(options "")(descr ""))
+  (lib (name ti3)(type KiCad)(uri /home/jose/code/Projetos/FrequencyCounter/TI/KiCAD/2020-09-07_11-09-15/footprints.pretty)(options "")(descr ""))
+)
